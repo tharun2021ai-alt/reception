@@ -18,19 +18,19 @@
             theme: {
                 extend: {
                     colors: {
-                        kasavu: '#FCF9F2',
-                        rosegold: {
-                            300: '#FAD6CD',
-                            400: '#E8A598',
-                            500: '#D48374',
-                            600: '#B86153',
-                            700: '#8C3D31'
+                        kasavu: '#FAF7F0',
+                        emeraldDeep: {
+                            800: '#064E3B',
+                            900: '#022C22',
                         },
-                        royalNight: {
-                            800: '#3D1A3B',
-                            900: '#2D112B',
+                        templeGold: {
+                            300: '#FDE68A',
+                            400: '#F59E0B',
+                            500: '#D97706',
+                            600: '#B45309',
+                            700: '#92400E'
                         },
-                        champagne: '#F7E7CE'
+                        champagne: '#FEF3C7'
                     },
                     fontFamily: {
                         serif: ['Cinzel', 'serif'],
@@ -48,16 +48,16 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #2D112B;
+            background: #022C22;
         }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #E8A598, #B86153);
+            background: linear-gradient(180deg, #F59E0B, #B45309);
             border-radius: 4px;
         }
 
-        /* Evening Rose-Gold Border Pattern */
-        .rosegold-border-top {
-            background: linear-gradient(90deg, #8C3D31 0%, #E8A598 25%, #FCF9F2 50%, #E8A598 75%, #8C3D31 100%);
+        /* Gold Shimmer Top Border */
+        .gold-border-top {
+            background: linear-gradient(90deg, #B45309 0%, #F59E0B 25%, #FEF3C7 50%, #F59E0B 75%, #B45309 100%);
             background-size: 200% 100%;
             animation: gradientShimmer 6s linear infinite;
             height: 6px;
@@ -70,18 +70,18 @@
 
         /* Glassmorphism Cards */
         .glass-card {
-            background: rgba(252, 249, 242, 0.85);
+            background: rgba(250, 247, 240, 0.90);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(232, 165, 152, 0.4);
-            box-shadow: 0 15px 35px -5px rgba(45, 17, 43, 0.08), inset 0 0 15px rgba(232, 165, 152, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            box-shadow: 0 15px 35px -5px rgba(2, 44, 34, 0.08), inset 0 0 15px rgba(245, 158, 11, 0.1);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .glass-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 22px 40px -5px rgba(45, 17, 43, 0.15), inset 0 0 20px rgba(232, 165, 152, 0.2);
-            border-color: rgba(232, 165, 152, 0.8);
+            box-shadow: 0 22px 40px -5px rgba(2, 44, 34, 0.15), inset 0 0 20px rgba(245, 158, 11, 0.2);
+            border-color: rgba(217, 119, 6, 0.7);
         }
 
         /* Portrait Frame Container */
@@ -96,10 +96,10 @@
             position: relative;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #E8A598, #B86153, #FAD6CD);
+            background: linear-gradient(135deg, #F59E0B, #B45309, #FDE68A);
             padding: 5px;
             border-radius: 2rem;
-            box-shadow: 0 20px 40px -10px rgba(45, 17, 43, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(2, 44, 34, 0.3);
         }
 
         .portrait-frame::before {
@@ -107,28 +107,28 @@
             position: absolute;
             inset: -4px;
             border-radius: 2.2rem;
-            background: linear-gradient(45deg, #E8A598, transparent, #FAD6CD, transparent);
+            background: linear-gradient(45deg, #F59E0B, transparent, #FDE68A, transparent);
             z-index: -1;
             filter: blur(10px);
             opacity: 0.7;
         }
 
-        /* Rose-Gold Glow Effect */
-        .rosegold-glow {
+        /* Gold Glow Effect */
+        .gold-glow {
             position: relative;
         }
-        .rosegold-glow::after {
+        .gold-glow::after {
             content: '';
             position: absolute;
             top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: linear-gradient(45deg, #E8A598, transparent, #FAD6CD, transparent);
+            background: linear-gradient(45deg, #F59E0B, transparent, #FDE68A, transparent);
             border-radius: inherit;
             z-index: -1;
             opacity: 0.5;
             filter: blur(8px);
             transition: opacity 0.3s ease;
         }
-        .rosegold-glow:hover::after {
+        .gold-glow:hover::after {
             opacity: 1;
         }
 
@@ -139,7 +139,7 @@
         }
         .eq-bar {
             width: 3px;
-            background: linear-gradient(180deg, #FAD6CD, #E8A598);
+            background: linear-gradient(180deg, #FDE68A, #F59E0B);
             border-radius: 2px;
             display: inline-block;
         }
@@ -149,7 +149,7 @@
 
         /* Typography Shimmer */
         .text-shimmer {
-            background: linear-gradient(90deg, #2D112B 0%, #E8A598 50%, #2D112B 100%);
+            background: linear-gradient(90deg, #022C22 0%, #D97706 50%, #022C22 100%);
             background-size: 200% auto;
             color: transparent;
             -webkit-background-clip: text;
@@ -185,38 +185,32 @@
         }
     </style>
 </head>
-<body class="bg-kasavu text-stone-800 font-sans antialiased selection:bg-rosegold-500 selection:text-white pb-20 relative overflow-x-hidden">
+<body class="bg-kasavu text-stone-800 font-sans antialiased selection:bg-templeGold-500 selection:text-white pb-20 relative overflow-x-hidden">
 
-    <!-- Creative Traditional Entry Overlay -->
-    <div id="welcomeOverlay" class="fixed inset-0 z-[100] bg-royalNight-900 flex flex-col justify-center items-center text-center p-4 sm:p-6 transition-all duration-1000 ease-in-out cursor-pointer overflow-hidden">
+    <!-- Entry Overlay -->
+    <div id="welcomeOverlay" class="fixed inset-0 z-[100] bg-emeraldDeep-900 flex flex-col justify-center items-center text-center p-4 sm:p-6 transition-all duration-1000 ease-in-out cursor-pointer overflow-hidden">
         
-        <!-- Glowing Radial Background -->
-        <div class="absolute w-[600px] h-[600px] rounded-full bg-radial from-rosegold-500/20 via-royalNight-800/10 to-transparent blur-3xl pointer-events-none"></div>
+        <div class="absolute w-[600px] h-[600px] rounded-full bg-radial from-templeGold-500/20 via-emeraldDeep-800/10 to-transparent blur-3xl pointer-events-none"></div>
 
-        <!-- Ornamental Corner Elements -->
-        <div class="absolute top-6 left-6 text-rosegold-400/40 text-3xl hidden sm:block">❖</div>
-        <div class="absolute top-6 right-6 text-rosegold-400/40 text-3xl hidden sm:block">❖</div>
-        <div class="absolute bottom-6 left-6 text-rosegold-400/40 text-3xl hidden sm:block">❖</div>
-        <div class="absolute bottom-6 right-6 text-rosegold-400/40 text-3xl hidden sm:block">❖</div>
+        <div class="absolute top-6 left-6 text-templeGold-400/40 text-3xl hidden sm:block">❖</div>
+        <div class="absolute top-6 right-6 text-templeGold-400/40 text-3xl hidden sm:block">❖</div>
+        <div class="absolute bottom-6 left-6 text-templeGold-400/40 text-3xl hidden sm:block">❖</div>
+        <div class="absolute bottom-6 right-6 text-templeGold-400/40 text-3xl hidden sm:block">❖</div>
 
-        <!-- Inner Card -->
-        <div class="relative max-w-md w-full bg-royalNight-900/85 backdrop-blur-xl p-8 sm:p-10 rounded-[2.5rem] border-2 border-rosegold-400/70 shadow-[0_0_50px_rgba(232,165,152,0.25)] flex flex-col items-center group">
+        <div class="relative max-w-md w-full bg-emeraldDeep-900/90 backdrop-blur-xl p-8 sm:p-10 rounded-[2.5rem] border-2 border-templeGold-400/70 shadow-[0_0_50px_rgba(245,158,11,0.25)] flex flex-col items-center group">
             
-            <!-- Traditional Crest -->
             <div class="relative w-28 h-28 mb-6 flex items-center justify-center">
-                <div class="absolute inset-0 rounded-full border border-dashed border-rosegold-400/50 animate-rotate-slow"></div>
-                <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-rosegold-600 via-rosegold-400 to-rosegold-300 p-[2px] shadow-[0_0_20px_rgba(232,165,152,0.5)]">
-                    <div class="w-full h-full rounded-full bg-royalNight-900 flex items-center justify-center text-rosegold-300">
+                <div class="absolute inset-0 rounded-full border border-dashed border-templeGold-400/50 animate-rotate-slow"></div>
+                <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-templeGold-600 via-templeGold-400 to-templeGold-300 p-[2px] shadow-[0_0_20px_rgba(245,158,11,0.5)]">
+                    <div class="w-full h-full rounded-full bg-emeraldDeep-900 flex items-center justify-center text-templeGold-300">
                         <span class="text-4xl font-serif">ॐ</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Traditional Malayalam Heading -->
-            <span class="font-malayalam text-rosegold-400 text-xl font-bold tracking-widest mb-1 drop-shadow">സസ്നേഹം ക്ഷണിക്കുന്നു</span>
+            <span class="font-malayalam text-templeGold-400 text-xl font-bold tracking-widest mb-1 drop-shadow">സസ്നേഹം ക്ഷണിക്കുന്നു</span>
             
-            <!-- Couple Names -->
-            <h2 class="text-3xl sm:text-4xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-rosegold-300 via-rosegold-400 to-rosegold-300 mb-1 tracking-tight">
+            <h2 class="text-3xl sm:text-4xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-templeGold-300 via-templeGold-400 to-templeGold-300 mb-1 tracking-tight">
                 Abhiraam &amp; Gayathri
             </h2>
             
@@ -224,37 +218,35 @@
                 Wedding Reception Invitation
             </p>
             
-            <!-- Interactive Tap Button -->
-            <button class="rosegold-glow relative overflow-hidden w-full py-4 px-8 bg-gradient-to-r from-rosegold-600 via-rosegold-400 to-rosegold-600 text-royalNight-900 font-serif font-extrabold text-base rounded-full shadow-[0_10px_25px_rgba(232,165,152,0.3)] transition-all duration-300 group-hover:scale-105 flex items-center justify-center gap-3">
+            <button class="gold-glow relative overflow-hidden w-full py-4 px-8 bg-gradient-to-r from-templeGold-600 via-templeGold-400 to-templeGold-600 text-emeraldDeep-900 font-serif font-extrabold text-base rounded-full shadow-[0_10px_25px_rgba(245,158,11,0.3)] transition-all duration-300 group-hover:scale-105 flex items-center justify-center gap-3">
                 <i class="fa-solid fa-envelope-open-text text-xl animate-bounce"></i>
                 <span class="tracking-wider uppercase text-sm">Open Invitation</span>
             </button>
         </div>
     </div>
 
-    <!-- Canvas Particle Layer -->
+    <!-- Particle Canvas -->
     <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
 
-    <!-- Top Shimmering Border -->
-    <div class="rosegold-border-top fixed top-0 left-0 right-0 z-50"></div>
+    <!-- Top Border -->
+    <div class="gold-border-top fixed top-0 left-0 right-0 z-50"></div>
 
-    <!-- Floating Audio Control Button -->
+    <!-- Floating Audio Button -->
     <div class="fixed bottom-6 right-6 z-50">
-        <button id="musicToggleBtn" class="rosegold-glow flex items-center gap-3 bg-royalNight-900/90 backdrop-blur-md text-rosegold-400 border border-rosegold-400/60 p-3.5 px-5 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 group cursor-pointer">
+        <button id="musicToggleBtn" class="gold-glow flex items-center gap-3 bg-emeraldDeep-900/95 backdrop-blur-md text-templeGold-400 border border-templeGold-400/60 p-3.5 px-5 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 group cursor-pointer">
             <div id="equalizer" class="flex items-center gap-1 h-5 w-4 justify-center">
                 <span class="eq-bar bar-1 h-2"></span>
                 <span class="eq-bar bar-2 h-4"></span>
                 <span class="eq-bar bar-3 h-3"></span>
             </div>
             <div class="text-left hidden sm:block">
-                <p class="text-[10px] uppercase font-bold tracking-widest text-rosegold-300">Meendum Pirandheno</p>
+                <p class="text-[10px] uppercase font-bold tracking-widest text-templeGold-300">Meendum Pirandheno</p>
                 <p id="musicStatusText" class="text-xs font-serif font-semibold text-white">Tap Photo to Play</p>
             </div>
-            <i id="musicIcon" class="fa-solid fa-music text-rosegold-400 text-base ml-1"></i>
+            <i id="musicIcon" class="fa-solid fa-music text-templeGold-400 text-base ml-1"></i>
         </button>
     </div>
 
-    <!-- Audio Element sourcing from repository file -->
     <audio id="bgAudio" loop preload="auto">
         <source src="Meendum%20Pirandheno.mp3" type="audio/mpeg">
         <source src="Meendum Pirandheno.mp3" type="audio/mpeg">
@@ -265,23 +257,23 @@
         <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 py-12 relative">
             
             <div class="flex items-center justify-center gap-4 mb-4">
-                <svg class="w-8 h-8 text-rosegold-500 opacity-80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L10 6H14L12 2ZM11 7H13V15H11V7ZM8 16H16V18H8V16ZM7 19H17V21H7V19Z"/></svg>
-                <div class="w-16 h-16 rounded-full border-2 border-rosegold-400/80 flex items-center justify-center bg-royalNight-900 text-rosegold-400 shadow-2xl rosegold-glow">
+                <svg class="w-8 h-8 text-templeGold-500 opacity-80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L10 6H14L12 2ZM11 7H13V15H11V7ZM8 16H16V18H8V16ZM7 19H17V21H7V19Z"/></svg>
+                <div class="w-16 h-16 rounded-full border-2 border-templeGold-400/80 flex items-center justify-center bg-emeraldDeep-900 text-templeGold-400 shadow-2xl gold-glow">
                     <span class="text-3xl font-serif">ॐ</span>
                 </div>
-                <svg class="w-8 h-8 text-rosegold-500 opacity-80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L10 6H14L12 2ZM11 7H13V15H11V7ZM8 16H16V18H8V16ZM7 19H17V21H7V19Z"/></svg>
+                <svg class="w-8 h-8 text-templeGold-500 opacity-80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L10 6H14L12 2ZM11 7H13V15H11V7ZM8 16H16V18H8V16ZM7 19H17V21H7V19Z"/></svg>
             </div>
 
-            <span class="font-malayalam text-rosegold-600 text-xl font-bold tracking-wider mb-1">വിവാഹ സൽക്കാരം</span>
-            <p class="text-royalNight-800 tracking-widest uppercase font-bold text-xs sm:text-sm mb-2">You are cordially invited to the grand wedding reception of</p>
+            <span class="font-malayalam text-templeGold-600 text-xl font-bold tracking-wider mb-1">വിവാഹ സൽക്കാരം</span>
+            <p class="text-emeraldDeep-800 tracking-widest uppercase font-bold text-xs sm:text-sm mb-2">We cordially invite your gracious presence with family for the wedding reception of</p>
             
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-black text-shimmer mb-3 tracking-tight">
-                Abhiraam <span class="text-rosegold-500 font-cursive text-5xl sm:text-7xl md:text-8xl font-normal">&amp;</span> Gayathri
+                Abhiraam <span class="text-templeGold-500 font-cursive text-5xl sm:text-7xl md:text-8xl font-normal">&amp;</span> Gayathri
             </h1>
             
-            <p class="text-royalNight-900 font-serif italic text-lg sm:text-xl mb-6">Join us to celebrate love, dinner &amp; joyous togetherness</p>
+            <p class="text-emeraldDeep-900 font-serif italic text-lg sm:text-xl mb-6">Join us to share the happiness and shower your blessings</p>
             
-            <!-- Photo Container with Sole Click-to-Play Audio Action -->
+            <!-- Photo Frame -->
             <div class="my-6 px-4 w-full scroll-reveal">
                 <div id="photoMusicTrigger" class="portrait-container group cursor-pointer relative" title="Tap photo to play music">
                     <div class="portrait-frame transition-transform duration-700 ease-out group-hover:scale-[1.03] active:scale-95">
@@ -292,9 +284,8 @@
                                  onerror="handleImageError(this)"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out">
                             
-                            <!-- Music Indicator Overlay on Photo -->
-                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-royalNight-900/90 backdrop-blur-md text-rosegold-300 text-[11px] font-medium px-3.5 py-1.5 rounded-full border border-rosegold-400/80 shadow-xl flex items-center gap-2 opacity-90 group-hover:opacity-100 transition-opacity">
-                                <i class="fa-solid fa-music text-rosegold-400 animate-pulse"></i>
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-emeraldDeep-900/90 backdrop-blur-md text-templeGold-300 text-[11px] font-medium px-3.5 py-1.5 rounded-full border border-templeGold-400/80 shadow-xl flex items-center gap-2 opacity-90 group-hover:opacity-100 transition-opacity">
+                                <i class="fa-solid fa-music text-templeGold-400 animate-pulse"></i>
                                 <span>Tap Photo for Music</span>
                             </div>
                         </div>
@@ -302,123 +293,147 @@
                 </div>
             </div>
 
-            <div class="inline-flex items-center gap-2 bg-royalNight-900 text-rosegold-300 text-xs sm:text-sm font-medium tracking-wider px-6 py-2.5 rounded-full border border-rosegold-400 shadow-lg my-6">
-                <i class="fa-solid fa-glass-water text-rosegold-400"></i>
-                <span>Dinner &amp; Celebrations</span>
+            <!-- Blessings Badge -->
+            <div class="inline-flex items-center gap-2 bg-emeraldDeep-900/10 text-emeraldDeep-900 text-xs sm:text-sm font-medium tracking-wider px-6 py-2.5 rounded-full border border-emeraldDeep-800/20 my-4">
+                <i class="fa-solid fa-gift text-templeGold-600"></i>
+                <span>Presents in Blessings Only</span>
             </div>
 
-            <!-- Groom & Bride Details -->
-            <div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 my-4 px-2">
-                <!-- Groom Card -->
-                <div class="glass-card p-6 sm:p-8 rounded-3xl text-left relative overflow-hidden flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-3 border-b border-rosegold-400/30 pb-2">
-                            <h3 class="text-lg font-serif font-bold text-royalNight-900">Groom</h3>
-                            <span class="text-xs text-rosegold-600 font-serif font-bold">വരൻ</span>
+            <!-- Family Details -->
+            <div class="max-w-4xl w-full flex flex-col gap-6 my-4 px-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Groom Card with Custom Transparent Background -->
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl text-left relative overflow-hidden flex flex-col justify-between group">
+                        <!-- Image Background Layer -->
+                        <div class="absolute inset-0 z-0 bg-cover bg-top opacity-30 group-hover:opacity-40 transition-opacity duration-500" 
+                             style="background-image: url('VS400765.JPG.jpg');">
                         </div>
-                        <p class="text-3xl font-serif text-rosegold-600 font-extrabold mb-3">Abhiraam</p>
-                        <p class="text-sm text-stone-700 mb-1"><strong>Son of:</strong> Smt. Geetha Ramakrishnan &amp; Shri Ramakrishnan</p>
-                        <p class="text-xs text-stone-500">“Shreeraagam”, Narukara, Manjeri</p>
+                        
+                        <!-- Soft White/Gold Blend Overlay for High Readability -->
+                        <div class="absolute inset-0 z-0 bg-gradient-to-b from-kasavu/90 via-kasavu/80 to-kasavu/95 backdrop-blur-[1px]"></div>
+
+                        <!-- Card Content Container -->
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-start mb-3 border-b border-templeGold-400/40 pb-2">
+                                <h3 class="text-lg font-serif font-bold text-emeraldDeep-900">Groom</h3>
+                                <span class="text-xs text-templeGold-600 font-serif font-bold">വരൻ</span>
+                            </div>
+                            <p class="text-3xl font-serif text-templeGold-600 font-extrabold mb-3 drop-shadow-sm">Abhiraam</p>
+                            <p class="text-sm text-stone-800 mb-2 font-medium"><strong>Son of:</strong> Smt. Geetha Ramakrishnan &amp; Shri Ramakrishnan</p>
+                            <p class="text-xs text-stone-700 font-semibold mb-3">“Shreeraagam”, Narukara, Manjeri</p>
+                        </div>
+                    </div>
+
+                    <!-- Bride Card -->
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl text-left relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 border-b border-templeGold-400/30 pb-2">
+                                <h3 class="text-lg font-serif font-bold text-emeraldDeep-900">Bride</h3>
+                                <span class="text-xs text-templeGold-600 font-serif font-bold">വധു</span>
+                            </div>
+                            <p class="text-3xl font-serif text-templeGold-600 font-extrabold mb-3">Gayathri</p>
+                            <p class="text-sm text-stone-700 mb-2"><strong>Daughter of:</strong> Smt. Reena Vinod &amp; Shri Vinod Nair</p>
+                            <p class="text-xs text-stone-600 mb-3">“Krishnaharmyam”, Kairali Nagar, Malampuzha, Palakkad</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Bride Card -->
-                <div class="glass-card p-6 sm:p-8 rounded-3xl text-left relative overflow-hidden flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-3 border-b border-rosegold-400/30 pb-2">
-                            <h3 class="text-lg font-serif font-bold text-royalNight-900">Bride</h3>
-                            <span class="text-xs text-rosegold-600 font-serif font-bold">വധു</span>
-                        </div>
-                        <p class="text-3xl font-serif text-rosegold-600 font-extrabold mb-3">Gayathri</p>
-                        <p class="text-sm text-stone-700 mb-1"><strong>Daughter of:</strong> Smt. Reena Vinod &amp; Shri Vinod Nair</p>
-                        <p class="text-xs text-stone-500">“Krishnaharmyam”, Kairali Nagar, Malampuzha, Palakkad</p>
-                    </div>
+                <!-- Centered Wedding Ceremony Details -->
+                <div class="glass-card p-4 sm:p-5 rounded-2xl text-center border border-templeGold-400/40 shadow-md">
+                    <p class="text-xs sm:text-sm font-serif font-medium text-emeraldDeep-900 italic">
+                        <i class="fa-solid fa-heart text-templeGold-600 mr-1.5"></i>
+                        Wedding held on November 25, 2026 at Ebrason Convention Centre, Mundur, Palakkad
+                    </p>
                 </div>
             </div>
 
             <!-- Countdown Timer -->
             <div class="mt-10 max-w-xl w-full">
-                <h4 class="font-serif text-royalNight-900 text-xs sm:text-sm tracking-widest uppercase mb-4 font-bold">Countdown To The Evening Reception</h4>
+                <h4 class="font-serif text-emeraldDeep-900 text-xs sm:text-sm tracking-widest uppercase mb-4 font-bold">Countdown To The Grand Reception</h4>
                 <div class="grid grid-cols-4 gap-3 sm:gap-4 text-center">
-                    <div class="bg-royalNight-900/90 backdrop-blur-md text-white p-3 sm:p-4 rounded-2xl border border-rosegold-400/80 shadow-xl">
-                        <span id="days" class="block text-2xl sm:text-4xl font-serif font-bold text-rosegold-400">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-rosegold-300 font-medium">Days</span>
+                    <div class="bg-emeraldDeep-900/90 backdrop-blur-md text-white p-3 sm:p-4 rounded-2xl border border-templeGold-400/80 shadow-xl">
+                        <span id="days" class="block text-2xl sm:text-4xl font-serif font-bold text-templeGold-400">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-templeGold-300 font-medium">Days</span>
                     </div>
-                    <div class="bg-royalNight-900/90 backdrop-blur-md text-white p-3 sm:p-4 rounded-2xl border border-rosegold-400/80 shadow-xl">
-                        <span id="hours" class="block text-2xl sm:text-4xl font-serif font-bold text-rosegold-400">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-rosegold-300 font-medium">Hours</span>
+                    <div class="bg-emeraldDeep-900/90 backdrop-blur-md text-white p-3 sm:p-4 rounded-2xl border border-templeGold-400/80 shadow-xl">
+                        <span id="hours" class="block text-2xl sm:text-4xl font-serif font-bold text-templeGold-400">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-templeGold-300 font-medium">Hours</span>
                     </div>
-                    <div class="bg-royalNight-900/90 backdrop-blur-md text-white p-3 sm:p-4 rounded-2xl border border-rosegold-400/80 shadow-xl">
-                        <span id="minutes" class="block text-2xl sm:text-4xl font-serif font-bold text-rosegold-400">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-rosegold-300 font-medium">Mins</span>
+                    <div class="bg-emeraldDeep-900/90 backdrop-blur-md text-white p-3 sm:p-4 rounded-2xl border border-templeGold-400/80 shadow-xl">
+                        <span id="minutes" class="block text-2xl sm:text-4xl font-serif font-bold text-templeGold-400">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-templeGold-300 font-medium">Mins</span>
                     </div>
-                    <div class="bg-royalNight-900/90 backdrop-blur-md text-white p-3 sm:p-4 rounded-2xl border border-rosegold-400/80 shadow-xl">
-                        <span id="seconds" class="block text-2xl sm:text-4xl font-serif font-bold text-rosegold-400">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-rosegold-300 font-medium">Secs</span>
+                    <div class="bg-emeraldDeep-900/90 backdrop-blur-md text-white p-3 sm:p-4 rounded-2xl border border-templeGold-400/80 shadow-xl">
+                        <span id="seconds" class="block text-2xl sm:text-4xl font-serif font-bold text-templeGold-400">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-templeGold-300 font-medium">Secs</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Reception Event Details Section -->
+        <!-- Reception Details Section -->
         <section class="py-12 px-4 max-w-3xl mx-auto relative">
             <div class="text-center mb-8">
-                <span class="font-malayalam text-rosegold-600 text-base font-bold">ചടങ്ങ് വിവരങ്ങൾ</span>
-                <h2 class="text-3xl sm:text-4xl font-serif text-royalNight-900 font-bold mb-2">Grand Reception</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-transparent via-rosegold-400 to-transparent mx-auto rounded-full"></div>
+                <span class="font-malayalam text-templeGold-600 text-base font-bold">ചടങ്ങ് വിവരങ്ങൾ</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-emeraldDeep-900 font-bold mb-2">Grand Reception</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-transparent via-templeGold-400 to-transparent mx-auto rounded-full"></div>
             </div>
 
             <div class="glass-card rounded-3xl overflow-hidden shadow-2xl">
                 <div class="p-6 sm:p-10">
                     <div class="flex items-center justify-between mb-6">
-                        <span class="bg-royalNight-900/10 text-royalNight-900 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-royalNight-800/20">Evening Party &amp; Dinner</span>
-                        <i class="fa-solid fa-champagne-glasses text-rosegold-600 text-2xl"></i>
+                        <span class="bg-emeraldDeep-900/10 text-emeraldDeep-900 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-emeraldDeep-800/20">Reception Ceremony</span>
+                        <i class="fa-solid fa-om text-templeGold-600 text-2xl"></i>
                     </div>
                     
-                    <h3 class="text-3xl font-serif font-bold text-royalNight-900 mb-1">Reception &amp; Gala Dinner</h3>
-                    <p class="text-sm font-malayalam text-rosegold-700 font-semibold mb-6">വിവാഹ സൽക്കാരം</p>
+                    <h3 class="text-3xl font-serif font-bold text-emeraldDeep-900 mb-1">Jayasree Auditorium</h3>
+                    <p class="text-sm font-malayalam text-templeGold-700 font-semibold mb-6">വിവാഹ സൽക്കാരം</p>
 
                     <div class="space-y-5 text-stone-700 text-base">
                         <div class="flex items-start">
-                            <i class="fa-regular fa-calendar-check text-rosegold-600 mt-1 mr-4 text-xl"></i>
+                            <i class="fa-regular fa-calendar-check text-templeGold-600 mt-1 mr-4 text-xl"></i>
                             <div>
-                                <p class="font-bold text-stone-900 text-lg">Thursday, November 26, 2026</p>
-                                <p class="text-xs text-stone-500">1102 വൃശ്ചികം 10</p>
+                                <p class="font-bold text-stone-900 text-lg">Sunday, November 29, 2026</p>
+                                <p class="text-xs text-stone-500">1102 വൃശ്ചികം 13 (13th Vrischikam 1202)</p>
                             </div>
                         </div>
 
                         <div class="flex items-start">
-                            <i class="fa-regular fa-clock text-rosegold-600 mt-1 mr-4 text-xl"></i>
+                            <i class="fa-regular fa-clock text-templeGold-600 mt-1 mr-4 text-xl"></i>
                             <div>
                                 <p class="font-semibold text-stone-900">Reception Time:</p>
-                                <p class="text-stone-700">4:00 PM Onwards</p>
+                                <p class="text-stone-700">Between 11:00 AM &amp; 2:00 PM</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start pt-4 border-t border-rosegold-300/40">
-                            <i class="fa-solid fa-utensils text-rosegold-600 mt-1 mr-4 text-xl"></i>
+                        <div class="flex items-start pt-4 border-t border-templeGold-300/40">
+                            <i class="fa-solid fa-location-dot text-templeGold-600 mt-1 mr-4 text-xl"></i>
                             <div>
-                                <p class="font-semibold text-stone-900">Dinner Service:</p>
-                                <p class="text-stone-700">6:30 PM Onwards</p>
-                                <p class="text-sm text-stone-600 mt-1"><strong>Venue:</strong> Groom's Residence (“Shreeraagam”), Narukara, Manjeri</p>
+                                <p class="font-semibold text-stone-900">Venue Location:</p>
+                                <p class="text-stone-700">Jayasree Auditorium, Manjeri, Malappuram</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-kasavu/80 p-5 border-t border-rosegold-300/40 text-center">
-                    <a href="https://maps.google.com/?q=Narukara+Manjeri" target="_blank" class="rosegold-glow inline-flex items-center justify-center gap-2 bg-royalNight-900 hover:bg-royalNight-800 text-rosegold-400 text-sm font-serif font-semibold py-3 px-8 rounded-xl transition shadow-lg border border-rosegold-400/60">
-                        <i class="fa-solid fa-map-location-dot"></i> Get Venue Directions (Manjeri)
+                <!-- Action Buttons: Map Directions & Add to Google Calendar -->
+                <div class="bg-kasavu/80 p-5 border-t border-templeGold-300/40 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://maps.google.com/?q=Jayasree+Auditorium+Manjeri" target="_blank" class="gold-glow w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emeraldDeep-900 hover:bg-emeraldDeep-800 text-templeGold-400 text-sm font-serif font-semibold py-3 px-6 rounded-xl transition shadow-lg border border-templeGold-400/60">
+                        <i class="fa-solid fa-map-location-dot"></i> Get Directions
+                    </a>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+of+Abhiraam+%26+Gayathri&dates=20261129T053000Z/20261129T083000Z&details=Wedding+Reception+of+Abhiraam+and+Gayathri.&location=Jayasree+Auditorium,+Manjeri,+Malappuram" target="_blank" class="gold-glow w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-templeGold-600 hover:bg-templeGold-700 text-white text-sm font-serif font-semibold py-3 px-6 rounded-xl transition shadow-lg border border-templeGold-400/60">
+                        <i class="fa-regular fa-calendar-plus"></i> Add to Google Calendar
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="bg-royalNight-900 text-rosegold-300 py-10 text-center text-xs border-t-2 border-rosegold-400/80">
-            <p class="font-serif text-rosegold-400 text-lg font-bold mb-1">Abhiraam &amp; Gayathri</p>
-            <p class="font-malayalam text-rosegold-500 font-bold mb-2">സസ്നേഹം ക്ഷണിക്കുന്നു</p>
-            <p class="text-stone-300">November 26, 2026 • Manjeri</p>
+        <footer class="bg-emeraldDeep-900 text-templeGold-300 py-10 text-center text-xs border-t-2 border-templeGold-400/80">
+            <p class="font-serif text-templeGold-400 text-lg font-bold mb-1">Abhiraam &amp; Gayathri</p>
+            <p class="font-malayalam text-templeGold-500 font-bold mb-2">സസ്നേഹം ക്ഷണിക്കുന്നു</p>
+            <p class="text-stone-300">Sharing the happiness: Hari Govind</p>
+            <p class="text-stone-400 mt-2">November 29, 2026 • Jayasree Auditorium, Manjeri</p>
         </footer>
     </main>
 
@@ -439,7 +454,7 @@
             audio.play().then(() => {
                 isPlaying = true;
                 musicStatusText.innerText = "Pause";
-                musicIcon.className = "fa-solid fa-pause text-rosegold-400 text-base ml-1";
+                musicIcon.className = "fa-solid fa-pause text-templeGold-400 text-base ml-1";
                 equalizer.classList.add('playing');
             }).catch(error => {
                 console.warn("Audio playback issue:", error);
@@ -450,7 +465,7 @@
             audio.pause();
             isPlaying = false;
             musicStatusText.innerText = "Tap Photo to Play";
-            musicIcon.className = "fa-solid fa-music text-rosegold-400 text-base ml-1";
+            musicIcon.className = "fa-solid fa-music text-templeGold-400 text-base ml-1";
             equalizer.classList.remove('playing');
         }
 
@@ -514,7 +529,7 @@
             }
         }
 
-        // Particle Background
+        // Particle Canvas Logic
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -544,7 +559,7 @@
                 }
             }
             draw() {
-                ctx.fillStyle = `rgba(232, 165, 152, ${this.opacity})`;
+                ctx.fillStyle = `rgba(217, 119, 6, ${this.opacity})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -571,8 +586,8 @@
         initParticles();
         animateParticles();
 
-        // Reception Countdown Logic (Target: Nov 26, 2026 at 4:00 PM)
-        const targetDate = new Date("November 26, 2026 16:00:00").getTime();
+        // Target Date: Nov 29, 2026 at 11:00 AM
+        const targetDate = new Date("November 29, 2026 11:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
